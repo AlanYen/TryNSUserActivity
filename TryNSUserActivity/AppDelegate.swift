@@ -40,7 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: [AnyObject]? -> Void) -> Bool {
+        
+        if (userActivity.activityType == "com.17Life.NSUserActivity") {
+            print "com.17Life.NSUserActivity"
+        }
+        
+        return true
+    }
 }
-
